@@ -181,3 +181,8 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: mongodb+srv://<%= ENV["MONGO_USER"] %>:<%= ENV["MONGO_PASS"] %>@heartvibes.a82pnzn.mongodb.net/heart_vibes_development?retryWrites=true&w=majority

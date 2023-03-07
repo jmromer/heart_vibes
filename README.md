@@ -81,9 +81,10 @@ class HeartRhythm
 ```
 <sup>[[source](https://github.com/jmromer/heart_vibes/blob/a886145c/app/models/heart_rhythm.rb#L3-L18)]</sup>
 
-The `.env` file at project root includes credentials for connecting to the the
-development database.
+The `.env` file generated at project root includes credentials for connecting to the development MongoDB instance.
 
 ## Demo
+
+Deployed to https://jmromer-hr.herokuapp.com:
 
 ![demo](app/assets/images/demo.gif)
