@@ -14,10 +14,23 @@
  *= require_self
  */
 
+input {
+  cursor: pointer;
+}
+
+input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  cursor: pointer;
+}
+
 .highcharts-figure,
 .highcharts-data-table table {
-  min-width: 1000px;
-  max-width: 1200px;
+  min-width: 800px;
+  max-width: 1000px;
   margin: 1em auto;
 }
 
@@ -55,4 +68,8 @@
 
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
+}
+
+.highcharts-credits {
+  display: none !important;
 }

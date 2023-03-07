@@ -3,20 +3,31 @@ import Highcharts from 'highcharts';
 
 export default class extends Controller {
   static isMobile = document.ontouchstart !== undefined;
+  static targets = ["form", "loading", "chart"];
 
   connect() {
-    // TODO: Display loading indicator
     this.renderChart();
   }
 
   update(event) {
-    // TODO: Display loading indicator
     event.preventDefault();
     this.renderChart();
   }
 
+  toggleSpinner({ show }) {
+    const spinner = this.loadingTarget;
+    if (show) { spinner.classList.remove('hidden'); }
+    else { spinner.classList.add('hidden'); }
+  }
+
+  toggleChart({ show }) {
+    const chart = this.chartTarget;
+    if (show) { chart.classList.remove('hidden'); }
+    else { chart.classList.add('hidden'); }
+  }
+
   async fetchData() {
-    const form = this.element;
+    const form = this.formTarget;
     const query = Array.from(form.querySelectorAll('input')).map(i => `${i.name}=${i.value}`).join('&');
 
     const resp = await fetch(`${form.action}?${query}`);
@@ -25,7 +36,12 @@ export default class extends Controller {
   }
 
   async renderChart() {
+    this.toggleSpinner({ show: true });
+    this.toggleChart({ show: false });
+
     const data = await this.fetchData();
+    this.toggleSpinner({ show: false });
+    this.toggleChart({ show: true });
 
     Highcharts.chart('container', {
       chart: { zoomType: 'x' },
