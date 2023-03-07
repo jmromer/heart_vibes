@@ -31,5 +31,3 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Restarting application server =="
   system! "bin/rails restart"
 end
-puts "\n== Building documentation =="
-system! "yard gems"

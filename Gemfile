@@ -29,7 +29,6 @@ group :development do
   gem "binding_of_caller"
   gem "bundler-gtags", github: "jmromer/bundler-gtags" # (https://github.com/kayhide/bundler-gtags)
   gem "letter_opener"
-  gem "org-ruby" # for yard server
   gem "rack-mini-profiler" # Add speed badges [https://github.com/miniprofiler/rack-mini-profiler]
   gem "rufo" # autoformatting (https://github.com/ruby-formatter/rufo)
   gem "web-console" # Use console on exceptions pages [https://github.com/rails/web-console]
