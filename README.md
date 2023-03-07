@@ -83,3 +83,7 @@ class HeartRhythm
 
 The `.env` file at project root includes credentials for connecting to the the
 development database.
+
+## Demo
+
+![demo](app/assets/images/demo.gif)
