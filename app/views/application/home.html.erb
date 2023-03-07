@@ -1,3 +1,18 @@
+<%= form_tag heart_rhythms_path(format: :json), method: :get, data: {
+    controller: "chart",
+    action: "chart#update change->chart#update",
+  } do %>
+
+  <%= label_tag :from %>
+  <%= datetime_field_tag :from, @from, min: @min_time, max: @max_time %>
+
+  <%= label_tag :to %>
+  <%= datetime_field_tag :to, @to, min: @min_time, max: @max_time %>
+
+  <%= label_tag :resolution %>
+  <%= number_field_tag(:resolution, @resolution, min: 2, max: 5) %>
+<% end %>
+
 <figure class="highcharts-figure">
   <div id="container"></div>
 </figure>
