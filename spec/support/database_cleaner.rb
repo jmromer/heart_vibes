@@ -50,7 +50,7 @@ end
 RSpec.configure do |config|
   config.before(:suite) do
     # NB: The redis adapter only has one strategy: the deletion strategy.
-    # DatabaseCleaner.clean_with(:deletion)
+    DatabaseCleaner.clean_with(:deletion)
   end
 
   config.before(:all, :context_state) do

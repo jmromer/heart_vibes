@@ -176,9 +176,7 @@ development:
 test:
   clients:
     default:
-      database: heart_vibes_test
-      hosts:
-        - localhost:27017
+      uri: mongodb+srv://<%= ENV["MONGO_USER"] %>:<%= ENV["MONGO_PASS"] %>@heartvibes.a82pnzn.mongodb.net/heart_vibes_development?retryWrites=true&w=majority
       options:
         read:
           mode: :primary
